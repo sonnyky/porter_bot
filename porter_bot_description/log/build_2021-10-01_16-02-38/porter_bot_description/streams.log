@@ -1,0 +1,71 @@
+[0.014s] Invoking command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_subscriber:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_service:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_publisher:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_server:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_executors:/opt/ros/foxy /usr/bin/cmake --build /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description -- -j2 -l2
+[0.134s] -- Found ament_cmake: 0.9.9 (/opt/ros/foxy/share/ament_cmake/cmake)
+[0.186s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.423s] -- Found ament_lint_auto: 0.9.6 (/opt/ros/foxy/share/ament_lint_auto/cmake)
+[0.524s] -- Added test 'copyright' to check source files copyright and LICENSE
+[0.562s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[0.563s] -- Configured cppcheck include dirs: 
+[0.563s] -- Configured cppcheck exclude dirs and/or files: 
+[0.574s] -- Added test 'cpplint' to check C / C++ code against the Google style
+[0.575s] -- Configured cpplint exclude dirs and/or files: 
+[0.578s] -- Added test 'flake8' to check Python code syntax and style conventions
+[0.581s] -- Added test 'lint_cmake' to check CMake code style
+[0.584s] -- Added test 'pep257' to check Python code against some of the style conventions in PEP 257
+[0.595s] -- Added test 'uncrustify' to check C / C++ code style
+[0.595s] -- Configured uncrustify additional arguments: 
+[0.597s] -- Added test 'xmllint' to check XML markup files
+[0.602s] -- Configuring done
+[0.628s] -- Generating done
+[0.628s] -- Build files have been written to: /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description
+[0.681s] Invoked command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_subscriber:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_service:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_publisher:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_server:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_executors:/opt/ros/foxy /usr/bin/cmake --build /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description -- -j2 -l2
+[0.735s] Invoking command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_subscriber:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_service:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_publisher:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_server:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_executors:/opt/ros/foxy /usr/bin/cmake --install /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description
+[0.752s] -- Install configuration: ""
+[0.752s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src
+[0.755s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description
+[0.760s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf
+[0.772s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf~
+[0.787s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf.sample
+[0.787s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch
+[0.787s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/build
+[0.787s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/build/.built_by
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/build/COLCON_IGNORE
+[0.788s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/display.launch.py
+[0.788s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/display.launch.py~
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/COLCON_IGNORE
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/build_2021-09-30_13-51-00
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/build_2021-09-30_13-51-00/logger_all.log
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/build_2021-09-30_13-51-00/events.log
+[0.788s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/latest
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/log/latest_build
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/COLCON_IGNORE
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/setup.ps1
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/local_setup.bash
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/_local_setup_util_sh.py
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/.colcon_install_layout
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/setup.zsh
+[0.789s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/local_setup.sh
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/local_setup.ps1
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/local_setup.zsh
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/_local_setup_util_ps1.py
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/setup.sh
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/install/setup.bash
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/rviz
+[0.790s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/rviz/urdf_config.rviz
+[0.790s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/ament_index/resource_index/package_run_dependencies/porter_bot_description
+[0.790s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/ament_index/resource_index/parent_prefix_path/porter_bot_description
+[0.791s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/environment/ament_prefix_path.sh
+[0.791s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/environment/ament_prefix_path.dsv
+[0.791s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/environment/path.sh
+[0.791s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/environment/path.dsv
+[0.791s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/local_setup.bash
+[0.791s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/local_setup.sh
+[0.791s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/local_setup.zsh
+[0.791s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/local_setup.dsv
+[0.792s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/package.dsv
+[0.792s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/ament_index/resource_index/packages/porter_bot_description
+[0.792s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/cmake/porter_bot_descriptionConfig.cmake
+[0.792s] -- Up-to-date: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/cmake/porter_bot_descriptionConfig-version.cmake
+[0.792s] -- Installing: /home/sonny/Desktop/Workspace/porter_bot_description/install/porter_bot_description/share/porter_bot_description/package.xml
+[0.792s] Invoked command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_subscriber:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_service:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_publisher:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_server:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_minimal_action_client:/home/sonny/Desktop/Workspace/ros2_tutorials_ws/install/examples_rclpy_executors:/opt/ros/foxy /usr/bin/cmake --install /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description
