@@ -42,6 +42,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/src"
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/launch"
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/rviz"
+    "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/config"
     )
 endif()
 
