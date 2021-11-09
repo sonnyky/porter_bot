@@ -51,19 +51,16 @@
       </material>
     </visual>
 
-    
     <collision>
       <geometry>
         <box size="${base_length} ${base_width} ${base_height}"/>
       </geometry>
     </collision>
     <xacro:box_inertia m="15" w="${base_width}" d="${base_length}" h="${base_height}"/>
-
   </link>
 
    <!-- Robot Footprint -->
   <link name="base_footprint"/>
-
   <joint name="base_joint" type="fixed">
     <parent link="base_link"/>
     <child link="base_footprint"/>
@@ -83,18 +80,13 @@
         </material>
       </visual>
 
-      
-
       <collision>
 	<origin xyz="0 0 0" rpy="${pi/2} 0 0"/>
 	<geometry>
           <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
 	</geometry>
       </collision>
-
       <xacro:cylinder_inertia m="0.5" r="${wheel_radius}" h="${wheel_width}"/>
-
-  
     </link>
 
     <joint name="${prefix}_joint" type="continuous">
@@ -227,7 +219,6 @@
      <robot_base_frame>base_link</robot_base_frame>
    </plugin>
  </gazebo>
-
 
  <gazebo>
    <plugin name='porter_diff_drive' filename='libgazebo_ros_diff_drive.so'>
@@ -394,6 +385,5 @@
     </plugin>
   </sensor>
 </gazebo>
-
 
 </robot>
