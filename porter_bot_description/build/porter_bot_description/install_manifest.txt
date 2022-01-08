@@ -1,6 +1,7 @@
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf~
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/src/description/porter_bot_description.urdf.sample.gazebo
+/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/#display.launch.py#
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/build/.built_by
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/build/COLCON_IGNORE
 /home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/install/porter_bot_description/share/porter_bot_description/launch/display.launch.py
