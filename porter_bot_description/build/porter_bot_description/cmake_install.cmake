@@ -44,6 +44,9 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/rviz"
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/config"
     "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/world"
+    "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/worlds"
+    "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/params"
+    "/home/sonny/Desktop/Workspace/porter_bot/porter_bot_description/maps"
     )
 endif()
 
