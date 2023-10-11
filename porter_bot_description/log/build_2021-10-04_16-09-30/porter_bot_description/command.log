@@ -1,4 +1,0 @@
-Invoking command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description': /usr/bin/cmake --build /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description -- -j2 -l2
-Invoked command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description' returned '0': /usr/bin/cmake --build /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description -- -j2 -l2
-Invoking command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description': /usr/bin/cmake --install /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description
-Invoked command in '/home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description' returned '0': /usr/bin/cmake --install /home/sonny/Desktop/Workspace/porter_bot_description/build/porter_bot_description
