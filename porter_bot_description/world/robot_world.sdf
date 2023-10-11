@@ -18,6 +18,16 @@
         <falloff>0</falloff>
       </spot>
     </light>
+    <!-- Include your robot -->
+    <model name="porter_bot">
+      <pose>0 0 0 0 0 0</pose>
+      <static>false</static>
+
+      <!-- Include the URDF file -->
+      <include>
+        <uri>file:../../src/description/porter_bot_description.urdf</uri>
+      </include>
+    </model>
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
