@@ -8,7 +8,6 @@ def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='porter_bot_description').find('porter_bot_description')
     default_model_path = os.path.join(pkg_share, 'src/description/porter_bot_description_expanded.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
-    world_path = os.path.join(pkg_share, 'world/robot_world.sdf')
 
     with open(default_model_path, 'r') as file:
         robot_description = file.read()
@@ -49,10 +48,8 @@ def generate_launch_description():
                                             description='Absolute path to rviz config file'),
         launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
                                             description='Flag to enable use_sim_time'),
-        launch.actions.ExecuteProcess(cmd=['ign', 'gazebo', '--verbose', world_path], output='screen'),
         robot_state_publisher_node,
         TimerAction(period=5.0, actions=[joint_state_publisher_node]),
-        #joint_state_publisher_node,
         robot_localization_node,
         rviz_node
     ])
