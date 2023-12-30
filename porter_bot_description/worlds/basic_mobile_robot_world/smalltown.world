@@ -4078,7 +4078,7 @@
       <!-- Set the location where we want to spawn the robot -->
       <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
       <!-- basic_mobile_robot -->
-      <uri>model://robot_description</uri>
+      <uri>model:///root/ros2_ws/porter_bot_description/src/description/porter_bot_description_expanded.urdf</uri>
     </include>
   </world>
 </sdf>
