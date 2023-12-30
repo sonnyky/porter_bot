@@ -1,6 +1,5 @@
 import launch
 from launch.substitutions import LaunchConfiguration
-from launch.actions import TimerAction
 import launch_ros
 import os
 
@@ -21,8 +20,7 @@ def generate_launch_description():
     joint_state_publisher_node = launch_ros.actions.Node(
         package='joint_state_publisher',
         executable='joint_state_publisher',
-        name='joint_state_publisher',
-        parameters=[{'robot_description': robot_description, 'use_gui': False}, {'use_sim_time': LaunchConfiguration('use_sim_time')}]
+        name='joint_state_publisher'
     )
 
     rviz_node = launch_ros.actions.Node(
@@ -46,10 +44,10 @@ def generate_launch_description():
                                             description='Absolute path to robot urdf file'),
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='True',
+        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='False',
                                             description='Flag to enable use_sim_time'),
         robot_state_publisher_node,
-        TimerAction(period=5.0, actions=[joint_state_publisher_node]),
+        joint_state_publisher_node,
         robot_localization_node,
         rviz_node
     ])
