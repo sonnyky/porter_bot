@@ -86,7 +86,7 @@
           <cylinder radius="${wheel_radius}" length="${wheel_width}"/>
 	</geometry>
       </collision>
-      <xacro:cylinder_inertia m="0.5" r="${wheel_radius}" h="${wheel_width}"/>
+      <xacro:cylinder_inertia m="0.2" r="${wheel_radius}" h="${wheel_width}"/>
     </link>
 
     <joint name="${prefix}_joint" type="continuous">
@@ -99,8 +99,21 @@
 
   <xacro:wheel prefix="rearwhl_l" x_reflect="-1" y_reflect="1" x_off="${wheel_rear_xoff}" />
   <xacro:wheel prefix="rearwhl_r" x_reflect="-1" y_reflect="-1" x_off="${wheel_rear_xoff}"/>
-  <xacro:wheel prefix="frontwhl_l" x_reflect="1" y_reflect="1" x_off="${wheel_front_xoff}"/>
-  <xacro:wheel prefix="frontwhl_r" x_reflect="1" y_reflect="-1" x_off="${wheel_front_xoff}"/>
+  
+  <joint name="caster_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_wheel"/>
+    <origin xyz="0.05 0 -0.04" rpy="0 0 0"/>
+  </joint>
+
+  <link name="caster_wheel">
+    <visual>
+        <geometry>
+            <sphere radius="0.02" />
+        </geometry>
+        <material name="black"/>
+    </visual>
+  </link>
 
   <link name="imu_link">
   <visual>
@@ -203,35 +216,7 @@
      <right_joint>rearwhl_r_joint</right_joint>
    
      <!-- kinematics -->
-     <wheel_separation>0.011</wheel_separation>
-     <wheel_diameter>0.06</wheel_diameter>
-
-     <!-- limits -->
-     <max_wheel_torque>20</max_wheel_torque>
-     <max_wheel_acceleration>1.0</max_wheel_acceleration>
-
-     <!-- output -->
-     <publish_odom>true</publish_odom>
-     <publish_odom_tf>true</publish_odom_tf>
-     <publish_wheel_tf>true</publish_wheel_tf>
-
-     <odometry_frame>odom</odometry_frame>
-     <robot_base_frame>base_link</robot_base_frame>
-   </plugin>
- </gazebo>
-
- <gazebo>
-   <plugin name="ignition::gazebo::systems::DiffDrive" filename='libignition-gazebo6-diff-drive-system.so'>
-     <ros>
-       <namespace>/demo</namespace>
-     </ros>
-     <!-- wheels -->
-
-     <left_joint>frontwhl_l_joint</left_joint>
-     <right_joint>frontwhl_r_joint</right_joint>
-
-     <!-- kinematics -->
-     <wheel_separation>0.011</wheel_separation>
+     <wheel_separation>0.08</wheel_separation>
      <wheel_diameter>0.06</wheel_diameter>
 
      <!-- limits -->
