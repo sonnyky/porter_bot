@@ -3,10 +3,12 @@ from launch.substitutions import LaunchConfiguration
 import launch_ros
 import os
 
+
 def generate_launch_description():
     pkg_share = launch_ros.substitutions.FindPackageShare(package='porter_bot_description').find('porter_bot_description')
     default_model_path = os.path.join(pkg_share, 'src/description/porter_bot_description_expanded.urdf')
     default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
+    world_path = os.path.join(pkg_share, 'world/robot_world.sdf')
 
     with open(default_model_path, 'r') as file:
         robot_description = file.read()
@@ -39,15 +41,32 @@ def generate_launch_description():
        parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': LaunchConfiguration('use_sim_time')}]
     )
 
+    motor_command_node = launch_ros.actions.Node(
+        package='motor_command',
+        executable='simple_mover',
+        name='simple_mover'
+    )
+
+    spawn_entity = launch_ros.actions.Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=['-entity', 'porter_bot', '-file', default_model_path],
+        output='screen',
+    )
+
     return launch.LaunchDescription([
         launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
                                             description='Absolute path to robot urdf file'),
         launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
                                             description='Absolute path to rviz config file'),
-        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='False',
-                                            description='Flag to enable use_sim_time'),
+        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='true', description='Flag to enable use_sim_time'),
+
+        launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', world_path], output='screen'),
+
+        spawn_entity,
         robot_state_publisher_node,
         joint_state_publisher_node,
         robot_localization_node,
+        motor_command_node,
         rviz_node
     ])
