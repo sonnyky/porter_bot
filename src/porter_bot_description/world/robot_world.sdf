@@ -1,22 +1,10 @@
 <?xml version="1.0" ?>
 <sdf version="1.8">
   <world name="world_demo">
-    <physics name="1ms" type="ignored">
+    <physics name="1ms" type="ode">
       <max_step_size>0.001</max_step_size>
       <real_time_factor>1.0</real_time_factor>
     </physics>
-    <plugin
-      filename="gz-sim-physics-system"
-      name="gz::sim::systems::Physics">
-    </plugin>
-    <plugin
-      filename="gz-sim-user-commands-system"
-      name="gz::sim::systems::UserCommands">
-    </plugin>
-    <plugin
-      filename="gz-sim-scene-broadcaster-system"
-      name="gz::sim::systems::SceneBroadcaster">
-    </plugin>
 
     <!--light-->
     <light type="directional" name="sun">
@@ -34,7 +22,7 @@
     </light>
     <!-- Include the URDF file -->
       <include>
-        <uri>file:///root/ros2_ws/porter_bot_description/src/description/porter_bot_description_expanded.urdf</uri>
+        <uri>file:///root/ros2_ws/src/porter_bot_description/src/description/porter_bot_description_expanded.urdf</uri>
       </include>
 
       <model name='ground_plane'>

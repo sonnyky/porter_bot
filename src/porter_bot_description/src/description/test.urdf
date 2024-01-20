@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<robot name="box_robot">
+
+  <!-- Robot Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.2 0.1"/> <!-- Dimensions of the box (length, width, height) -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.4 0.2 0.1"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="5.0"/> <!-- Mass of the robot -->
+      <inertia ixx="0.1" iyy="0.1" izz="0.1" ixy="0" ixz="0" iyz="0"/> <!-- Inertia tensor -->
+    </inertial>
+  </link>
+
+  <!-- Main Wheels -->
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/> <!-- Wheel radius and width -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.0"/> <!-- Mass of the wheel -->
+      <inertia ixx="0.01" iyy="0.01" izz="0.01" ixy="0" ixz="0" iyz="0"/> <!-- Inertia tensor -->
+    </inertial>
+  </link>
+
+  <link name="right_wheel">
+    <!-- Copy the visual, collision, and inertial elements from the left_wheel -->
+  </link>
+
+  <!-- Caster Wheel -->
+  <link name="caster_wheel">
+    <visual>
+      <geometry>
+        <sphere radius="0.02"/> <!-- Radius of the caster wheel -->
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.5"/> <!-- Mass of the caster wheel -->
+      <inertia ixx="0.005" iyy="0.005" izz="0.005" ixy="0" ixz="0" iyz="0"/> <!-- Inertia tensor -->
+    </inertial>
+  </link>
+
+  <!-- Joints -->
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="-0.15 -0.1 0" rpy="0 0 0"/> <!-- Position of the left wheel -->
+    <axis xyz="0 1 0"/> <!-- Rotation axis of the wheel -->
+  </joint>
+
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="-0.15 0.1 0" rpy="0 0 0"/> <!-- Position of the right wheel -->
+    <axis xyz="0 1 0"/>
+  </joint>
+
+  <joint name="caster_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="caster_wheel"/>
+    <origin xyz="0.15 0 0" rpy="0 0 0"/> <!-- Position of the caster wheel -->
+  </joint>
+
+</robot>
