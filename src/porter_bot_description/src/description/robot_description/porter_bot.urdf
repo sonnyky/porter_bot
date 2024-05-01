@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<robot name="porter_bot">
+
+    <material name="green">
+        <color rgba="0.5 0 0 1" />
+    </material>
+
+     <material name="grey">
+        <color rgba="0.5 0.5 0.5 1" />
+    </material>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <!--  <box size="0.157 0.073 0.055" />  -->
+                <box size="0.6 0.4 0.2" />
+            </geometry>
+            <!--  <origin xyz="0 0 0.0275" rpy="0 0 0" /> -->
+            <origin xyz="0 0 0.1" rpy="0 0 0" /> 
+            <material name="green" />
+        </visual>
+    </link>
+
+    <link name="right_wheel_link">
+        <visual>
+            <geometry>
+                <!-- <cylinder radius="0.03" length="0.007" /> -->
+                <cylinder radius="0.1" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.57 0 0" />
+            <material name="grey" />
+        </visual>
+    </link>
+
+    <joint name="base_right_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="right_wheel_link" />
+        <origin xyz="-0.15 -0.225 0" rpy="0 0 0" /> <!-- adding half of the cylinder height to the origin Y-->
+        <axis xyz="0 1 0" />
+    </joint>
+
+</robot>
