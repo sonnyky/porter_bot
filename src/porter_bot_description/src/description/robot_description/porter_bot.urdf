@@ -32,10 +32,28 @@
         </visual>
     </link>
 
+     <link name="left_wheel_link">
+        <visual>
+            <geometry>
+                <!-- <cylinder radius="0.03" length="0.007" /> -->
+                <cylinder radius="0.1" length="0.05" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="-1.57 0 0" />
+            <material name="grey" />
+        </visual>
+    </link>
+
     <joint name="base_right_wheel_joint" type="continuous">
         <parent link="base_link" />
         <child link="right_wheel_link" />
         <origin xyz="-0.15 -0.225 0" rpy="0 0 0" /> <!-- adding half of the cylinder height to the origin Y-->
+        <axis xyz="0 1 0" />
+    </joint>
+
+    <joint name="base_left_wheel_joint" type="continuous">
+        <parent link="base_link" />
+        <child link="left_wheel_link" />
+        <origin xyz="-0.15 0.225 0" rpy="0 0 0" /> <!-- adding half of the cylinder height to the origin Y-->
         <axis xyz="0 1 0" />
     </joint>
 
