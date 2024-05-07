@@ -11,6 +11,10 @@ def generate_launch_description():
     urdf_path = os.path.join(get_package_share_path('porter_bot_description'),
                              'src/description/robot_description', 'porter_bot.urdf')
     
+    rviz2_config_path = os.path.join(get_package_share_path('porter_bot_description'),
+                             'rviz', 'urdf_config.rviz')
+    
+    # notice the space after xacro, this space is necessary to make the command work with Command module
     robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
 
     robot_state_publisher_node = Node(
@@ -26,7 +30,8 @@ def generate_launch_description():
 
     rviz2_node = Node(
         package="rviz2",
-        executable="rviz2"
+        executable="rviz2",
+        arguments=['-d', rviz2_config_path] # but there should be no space here.
     )
 
     return LaunchDescription([
