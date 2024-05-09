@@ -1,72 +1,41 @@
-import launch
-from launch.substitutions import LaunchConfiguration
-import launch_ros
+from launch import LaunchDescription
+from launch_ros.parameter_descriptions import ParameterValue
+from launch_ros.actions import Node
+from launch.substitutions import Command
 import os
 
+from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
-    pkg_share = launch_ros.substitutions.FindPackageShare(package='porter_bot_description').find('porter_bot_description')
-    default_model_path = os.path.join(pkg_share, 'src/description/porter_bot_description_expanded.urdf')
-    default_rviz_config_path = os.path.join(pkg_share, 'rviz/urdf_config.rviz')
-    world_path = os.path.join(pkg_share, 'world/robot_world.sdf')
 
-    with open(default_model_path, 'r') as file:
-        robot_description = file.read()
+    urdf_path = os.path.join(get_package_share_path('porter_bot_description'),
+                             'src/description/robot_description', 'porter_bot.urdf.xacro')
+    
+    rviz2_config_path = os.path.join(get_package_share_path('porter_bot_description'),
+                             'rviz', 'urdf_config.rviz')
+    
+    # notice the space after xacro, this space is necessary to make the command work with Command module
+    robot_description = ParameterValue(Command(['xacro ', urdf_path]), value_type=str)
 
-    robot_state_publisher_node = launch_ros.actions.Node(
-        package='robot_state_publisher',
-        executable='robot_state_publisher',
-        parameters=[{'robot_description': robot_description}, {'use_sim_time': LaunchConfiguration('use_sim_time')}]
+    robot_state_publisher_node = Node(
+        package="robot_state_publisher",
+        executable="robot_state_publisher",
+        parameters=[{'robot_description':robot_description}]
     )
 
-    joint_state_publisher_node = launch_ros.actions.Node(
-        package='joint_state_publisher',
-        executable='joint_state_publisher',
-        name='joint_state_publisher'
+    joint_state_publisher_gui_node = Node(
+        package="joint_state_publisher_gui",
+        executable="joint_state_publisher_gui"
     )
 
-    rviz_node = launch_ros.actions.Node(
-        package='rviz2',
-        executable='rviz2',
-        name='rviz2',
-        output='screen',
-        arguments=['-d', LaunchConfiguration('rvizconfig')],
+    rviz2_node = Node(
+        package="rviz2",
+        executable="rviz2",
+        arguments=['-d', rviz2_config_path] # but there should be no space here.
     )
 
-    robot_localization_node = launch_ros.actions.Node(
-       package='robot_localization',
-       executable='ekf_node',
-       name='ekf_filter_node',
-       output='screen',
-       parameters=[os.path.join(pkg_share, 'config/ekf.yaml'), {'use_sim_time': LaunchConfiguration('use_sim_time')}]
-    )
-
-    motor_command_node = launch_ros.actions.Node(
-        package='motor_command',
-        executable='simple_mover',
-        name='simple_mover'
-    )
-
-    spawn_entity = launch_ros.actions.Node(
-        package='gazebo_ros',
-        executable='spawn_entity.py',
-        arguments=['-entity', 'porter_bot', '-file', default_model_path],
-        output='screen',
-    )
-
-    return launch.LaunchDescription([
-        launch.actions.DeclareLaunchArgument(name='model', default_value=default_model_path,
-                                            description='Absolute path to robot urdf file'),
-        launch.actions.DeclareLaunchArgument(name='rvizconfig', default_value=default_rviz_config_path,
-                                            description='Absolute path to rviz config file'),
-        launch.actions.DeclareLaunchArgument(name='use_sim_time', default_value='true', description='Flag to enable use_sim_time'),
-
-        launch.actions.ExecuteProcess(cmd=['gazebo', '--verbose', world_path], output='screen'),
-
-        spawn_entity,
+    return LaunchDescription([
         robot_state_publisher_node,
-        joint_state_publisher_node,
-        robot_localization_node,
-        motor_command_node,
-        rviz_node
+        joint_state_publisher_gui_node,
+        rviz2_node
     ])
