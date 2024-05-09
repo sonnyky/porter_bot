@@ -3,5 +3,6 @@
 
     <xacro:include filename="$(find porter_bot_description)/src/description/robot_description/common_properties.xacro" />
     <xacro:include filename="$(find porter_bot_description)/src/description/robot_description/mobile_base.xacro" />
+    <xacro:include filename="$(find porter_bot_description)/src/description/robot_description/mobile_base_gazebo.xacro" />
 
 </robot>
