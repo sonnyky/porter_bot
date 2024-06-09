@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<robot name="porter_bot" xmlns:xacro="http://wwww.ros.org/wiki/xacro">
+    <xacro:include filename="$(find porter_bot_description)/src/description/robot_description/common_properties.xacro" />
+     <xacro:include filename="$(find porter_bot_description)/src/description/robot_description/arm.xacro" />
+
+
+
+</robot>
