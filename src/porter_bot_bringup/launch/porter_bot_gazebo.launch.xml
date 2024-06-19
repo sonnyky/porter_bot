@@ -1,5 +1,5 @@
 <launch>
-     <let name="urdf_path" value="$(find-pkg-share porter_bot_description)/src/description/robot_description/porter_bot.urdf.xacro" />
+     <let name="urdf_path" value="$(find-pkg-share porter_bot_description)/src/description/robot_description/standalone_arm.urdf.xacro" />
      <let name="rviz_config_path" value="$(find-pkg-share porter_bot_bringup)/rviz/urdf_config.rviz" />
      <node pkg="robot_state_publisher" exec="robot_state_publisher">
         <param name="robot_description"
